@@ -18,27 +18,27 @@ namespace ListProductForm.ProductForm
         public ProductAddForm()
         {
             InitializeComponent();
+            _context = new EFContext();
         }
 
         private void ProductAddForm_Load(object sender, EventArgs e)
-        {
-            List<Category> list = _context
-                .Categories
-                .Select(p => new Category
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                })
-                .ToList();
-            cmbCategory.Items.Add(list);
+        { 
+            var listCategories = _context.Categories
+               .Select(c => new SelectItemElement
+               {
+                   Id = c.Id,
+                   Value = c.Name
+               }).ToArray();
+            cmbCategory.Items.AddRange(listCategories);
+            
             /*
-            foreach (var category in list)
+            if (cmbCategory.SelectedItem != null)
             {
-                object[] row = { category.Id,
-                    category.Name };
-                cmbCategory.Items.Add(string(row.));
+                var item = (SelectItemElement)cmbCategory.SelectedItem;
+                MessageBox.Show(item.Id.ToString());
             }
             */
+
         }
     }
 }

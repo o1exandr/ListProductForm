@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ProductItemModel.cs" />
+    <Compile Include="Models\SelectItemElement.cs" />
     <Compile Include="ProductForm\ProductAddForm.cs">
       <SubType>Form</SubType>
     </Compile>

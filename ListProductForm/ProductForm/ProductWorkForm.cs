@@ -42,7 +42,6 @@ namespace ListProductForm.ProductForm
 
         private void btInsert_Click(object sender, EventArgs e)
         {
-            
             ProductAddForm productAddForm = new ProductAddForm();
             productAddForm.ShowDialog();
         }
