@@ -30,6 +30,10 @@
         {
             this.lbCategory = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.lbName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btInsert = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbCategory
@@ -49,13 +53,56 @@
             this.cmbCategory.Size = new System.Drawing.Size(217, 21);
             this.cmbCategory.TabIndex = 1;
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(15, 51);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(39, 13);
+            this.lbName.TabIndex = 2;
+            this.lbName.Text = "Назва";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(76, 51);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(217, 20);
+            this.txtName.TabIndex = 3;
+            // 
+            // btInsert
+            // 
+            this.btInsert.Location = new System.Drawing.Point(136, 91);
+            this.btInsert.Name = "btInsert";
+            this.btInsert.Size = new System.Drawing.Size(75, 23);
+            this.btInsert.TabIndex = 4;
+            this.btInsert.Text = "Додати";
+            this.btInsert.UseVisualStyleBackColor = true;
+            this.btInsert.Click += new System.EventHandler(this.btInsert_Click);
+            // 
+            // btCancel
+            // 
+            this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btCancel.Location = new System.Drawing.Point(217, 91);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(75, 23);
+            this.btCancel.TabIndex = 5;
+            this.btCancel.Text = "Скасувати";
+            this.btCancel.UseVisualStyleBackColor = true;
+            // 
             // ProductAddForm
             // 
+            this.AcceptButton = this.btInsert;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 126);
+            this.CancelButton = this.btCancel;
+            this.ClientSize = new System.Drawing.Size(305, 126);
+            this.Controls.Add(this.btCancel);
+            this.Controls.Add(this.btInsert);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.lbCategory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ProductAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Додати товар";
@@ -69,5 +116,9 @@
 
         private System.Windows.Forms.Label lbCategory;
         private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btInsert;
+        private System.Windows.Forms.Button btCancel;
     }
 }

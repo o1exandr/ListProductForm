@@ -30,15 +30,40 @@ namespace ListProductForm.ProductForm
                    Value = c.Name
                }).ToArray();
             cmbCategory.Items.AddRange(listCategories);
-            
-            /*
+
+        }
+
+        private void btInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            Product product = new Product();
             if (cmbCategory.SelectedItem != null)
             {
                 var item = (SelectItemElement)cmbCategory.SelectedItem;
-                MessageBox.Show(item.Id.ToString());
+                product.CategoryId = Convert.ToInt32(item.Id.ToString());
             }
-            */
+            else
+            {
+                MessageBox.Show("Оберіть категорію");
+                return;
+            }
 
+                product.Name = txtName.Text;
+
+                using (EFContext context = new EFContext())
+                {
+                    context.Products.Add(product);
+                    context.SaveChanges();
+                }
+
+                MessageBox.Show($"Товар {product.Name} додано");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка запису товару\n\t{ex.Message}", ex.Message);
+            }
         }
     }
 }
