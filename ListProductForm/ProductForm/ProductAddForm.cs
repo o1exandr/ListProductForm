@@ -30,7 +30,6 @@ namespace ListProductForm.ProductForm
                    Value = c.Name
                }).ToArray();
             cmbCategory.Items.AddRange(listCategories);
-
         }
 
         private void btInsert_Click(object sender, EventArgs e)

@@ -23,6 +23,7 @@ namespace ListProductForm.ProductForm
 
         private void ProductWorkForm_Load(object sender, EventArgs e)
         {
+            dgvProducts.Rows.Clear();
             List<ProductItemModel> list = _context
                 .Products
                 .Select(p => new ProductItemModel
@@ -44,6 +45,30 @@ namespace ListProductForm.ProductForm
         {
             ProductAddForm productAddForm = new ProductAddForm();
             productAddForm.ShowDialog();
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvProducts.SelectedCells.Count > 0)
+                {
+                    int selectedrowindex = dgvProducts.SelectedCells[0].RowIndex;
+
+                    DataGridViewRow selectedRow = dgvProducts.Rows[selectedrowindex];
+
+                    Product product = new Product();
+                    product.Id = Convert.ToInt32(selectedRow.Cells["ColId"].Value);
+                    product.Name = Convert.ToString(selectedRow.Cells["ColName"].Value);
+
+                    ProductEditForm editproduct = new ProductEditForm(product);
+                    editproduct.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка оновлення товару\n\t{ex.Message}", ex.Message);
+            }
         }
     }
 }

@@ -98,6 +98,12 @@
     <Compile Include="ProductForm\ProductAddForm.Designer.cs">
       <DependentUpon>ProductAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductForm\ProductEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductForm\ProductEditForm.Designer.cs">
+      <DependentUpon>ProductEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForm\ProductWorkForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm\ProductAddForm.resx">
       <DependentUpon>ProductAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductForm\ProductEditForm.resx">
+      <DependentUpon>ProductEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm\ProductWorkForm.resx">
       <DependentUpon>ProductWorkForm.cs</DependentUpon>
