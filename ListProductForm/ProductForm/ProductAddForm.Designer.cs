@@ -39,35 +39,35 @@
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
-            this.lbCategory.Location = new System.Drawing.Point(13, 16);
+            this.lbCategory.Location = new System.Drawing.Point(13, 54);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(56, 13);
-            this.lbCategory.TabIndex = 0;
+            this.lbCategory.TabIndex = 2;
             this.lbCategory.Text = "Категорія";
             // 
             // cmbCategory
             // 
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(76, 13);
+            this.cmbCategory.Location = new System.Drawing.Point(76, 51);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(217, 21);
-            this.cmbCategory.TabIndex = 1;
+            this.cmbCategory.TabIndex = 3;
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(15, 51);
+            this.lbName.Location = new System.Drawing.Point(14, 25);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(39, 13);
-            this.lbName.TabIndex = 2;
+            this.lbName.TabIndex = 0;
             this.lbName.Text = "Назва";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(76, 51);
+            this.txtName.Location = new System.Drawing.Point(75, 25);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(217, 20);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 1;
             // 
             // btInsert
             // 
