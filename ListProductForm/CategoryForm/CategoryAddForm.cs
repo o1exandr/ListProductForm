@@ -13,6 +13,21 @@ namespace ListProductForm.CategoryForm
 {
     public partial class CategoryAddForm : Form
     {
+        public string NameCategory
+        {
+            get
+            {
+                return txtCategory.Text;
+            }
+        }
+        public string ImageCategory
+        {
+            get
+            {
+                return txtPath.Text;
+            }
+        }
+
         public CategoryAddForm()
         {
             InitializeComponent();
@@ -39,6 +54,19 @@ namespace ListProductForm.CategoryForm
                 MessageBox.Show($"Помилка запису категорії\n\t{ex.Message}", ex.Message);
             }
 
+        }
+
+        private void CategoryAddForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = @"Images\Category\_default.jpg";
+                pbImage.Image = Image.FromFile(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка завантаження малюнка\n\t{ex.Message}", ex.Message);
+            }
         }
     }
 }

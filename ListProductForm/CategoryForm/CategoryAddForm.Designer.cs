@@ -32,6 +32,10 @@
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.btCancel = new System.Windows.Forms.Button();
             this.btInsert = new System.Windows.Forms.Button();
+            this.pbImage = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPath = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lbCategory
@@ -53,7 +57,7 @@
             // btCancel
             // 
             this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btCancel.Location = new System.Drawing.Point(402, 58);
+            this.btCancel.Location = new System.Drawing.Point(401, 156);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(75, 23);
             this.btCancel.TabIndex = 2;
@@ -62,7 +66,7 @@
             // 
             // btInsert
             // 
-            this.btInsert.Location = new System.Drawing.Point(321, 58);
+            this.btInsert.Location = new System.Drawing.Point(317, 156);
             this.btInsert.Name = "btInsert";
             this.btInsert.Size = new System.Drawing.Size(75, 23);
             this.btInsert.TabIndex = 2;
@@ -70,24 +74,54 @@
             this.btInsert.UseVisualStyleBackColor = true;
             this.btInsert.Click += new System.EventHandler(this.btInsert_Click);
             // 
+            // pbImage
+            // 
+            this.pbImage.Location = new System.Drawing.Point(110, 49);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(128, 128);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImage.TabIndex = 3;
+            this.pbImage.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Зображення:";
+            // 
+            // txtPath
+            // 
+            this.txtPath.Location = new System.Drawing.Point(253, 51);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(223, 20);
+            this.txtPath.TabIndex = 5;
+            // 
             // CategoryAddForm
             // 
             this.AcceptButton = this.btInsert;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btCancel;
-            this.ClientSize = new System.Drawing.Size(488, 102);
+            this.ClientSize = new System.Drawing.Size(488, 191);
+            this.Controls.Add(this.txtPath);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pbImage);
             this.Controls.Add(this.btInsert);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.lbCategory);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(504, 140);
+            this.MaximumSize = new System.Drawing.Size(504, 230);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(504, 140);
+            this.MinimumSize = new System.Drawing.Size(504, 230);
             this.Name = "CategoryAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Додати категорію";
+            this.Load += new System.EventHandler(this.CategoryAddForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +133,8 @@
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Button btInsert;
+        private System.Windows.Forms.PictureBox pbImage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPath;
     }
 }
