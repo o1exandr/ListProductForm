@@ -60,12 +60,25 @@ namespace ListProductForm.CategoryForm
         {
             try
             {
-                string path = @"Images\Category\_default.jpg";
+                string path = @"Images\Category\_default.png";
                 pbImage.Image = Image.FromFile(path);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Помилка завантаження малюнка\n\t{ex.Message}", ex.Message);
+            }
+        }
+
+        private void pbImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) " +
+                "| *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                txtPath.Text = dlg.FileName;
+                pbImage.Image = Image.FromFile(txtPath.Text);
             }
         }
     }
