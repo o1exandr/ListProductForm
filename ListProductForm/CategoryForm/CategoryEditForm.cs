@@ -24,6 +24,12 @@ namespace ListProductForm.CategoryForm
             InitializeComponent();
             Id = category.Id;
             txtCategory.Text = category.Name;
+            string path = @"Images\Category\";
+            string name = category.Image;
+            if (string.IsNullOrEmpty(name))
+                name = "_default.png";
+            txtPath.Text = path + name;
+            pbImage.Image = Image.FromFile(path + name);
         }
 
         private void btUpdate_Click(object sender, EventArgs e)
@@ -53,6 +59,11 @@ namespace ListProductForm.CategoryForm
             {
                 MessageBox.Show($"Помилка оновлення категорії\n\t{ex.Message}", ex.Message);
             }
+        }
+
+        private void CategoryEditForm_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }

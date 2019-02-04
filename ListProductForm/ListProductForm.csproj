@@ -75,6 +75,7 @@
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\EFContext.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Helper\ImageWorker.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

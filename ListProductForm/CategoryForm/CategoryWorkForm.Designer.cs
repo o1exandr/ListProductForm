@@ -29,39 +29,30 @@
         private void InitializeComponent()
         {
             this.dgvCategories = new System.Windows.Forms.DataGridView();
-            this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btRead = new System.Windows.Forms.Button();
             this.dbInsert = new System.Windows.Forms.Button();
             this.btUpdate = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
+            this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCategories
             // 
+            this.dgvCategories.CausesValidation = false;
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColId,
+            this.ColImage,
             this.ColName});
             this.dgvCategories.Location = new System.Drawing.Point(7, 56);
-            this.dgvCategories.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCategories.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCategories.Name = "dgvCategories";
-            this.dgvCategories.RowTemplate.Height = 24;
+            this.dgvCategories.RowTemplate.Height = 64;
             this.dgvCategories.Size = new System.Drawing.Size(578, 279);
             this.dgvCategories.TabIndex = 0;
-            // 
-            // ColId
-            // 
-            this.ColId.HeaderText = "Id";
-            this.ColId.Name = "ColId";
-            this.ColId.Visible = false;
-            // 
-            // ColName
-            // 
-            this.ColName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColName.HeaderText = "Назва";
-            this.ColName.Name = "ColName";
             // 
             // btRead
             // 
@@ -103,6 +94,26 @@
             this.btDelete.UseVisualStyleBackColor = true;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
+            // ColId
+            // 
+            this.ColId.HeaderText = "Id";
+            this.ColId.Name = "ColId";
+            this.ColId.Visible = false;
+            // 
+            // ColImage
+            // 
+            this.ColImage.HeaderText = "";
+            this.ColImage.Name = "ColImage";
+            this.ColImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColImage.Width = 72;
+            // 
+            // ColName
+            // 
+            this.ColName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColName.HeaderText = "Назва";
+            this.ColName.Name = "ColName";
+            // 
             // CategoryWorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,7 +124,7 @@
             this.Controls.Add(this.dbInsert);
             this.Controls.Add(this.btRead);
             this.Controls.Add(this.dgvCategories);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CategoryWorkForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Список категорій";
@@ -127,11 +138,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCategories;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
         private System.Windows.Forms.Button btRead;
         private System.Windows.Forms.Button dbInsert;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Button btDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
+        private System.Windows.Forms.DataGridViewImageColumn ColImage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
     }
 }

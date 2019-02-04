@@ -25,9 +25,16 @@ namespace ListProductForm.CategoryForm
             dgvCategories.Rows.Clear();
             foreach(var category in _context.Categories)
             {
-                object []row = { category.Id, category.Name };
+                string path = @"Images\Category\";
+
+                string name = category.Image;
+                if (string.IsNullOrEmpty(name))
+                    name = "_default.png";
+                Image image = Image.FromFile(path + name);
+                object[] row = { category.Id, image, category.Name };
                 dgvCategories.Rows.Add(row);
             }
+
         }
 
         private void dbInsert_Click(object sender, EventArgs e)
@@ -49,6 +56,7 @@ namespace ListProductForm.CategoryForm
                     Category category = new Category();
                     category.Id = Convert.ToInt32(selectedRow.Cells["ColId"].Value);
                     category.Name = Convert.ToString(selectedRow.Cells["ColName"].Value);
+                    category.Image = _context.Categories.SqlQuery("");
 
                     CategoryEditForm editcategory = new CategoryEditForm(category);
                     editcategory.ShowDialog();

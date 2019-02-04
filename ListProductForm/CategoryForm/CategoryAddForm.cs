@@ -1,9 +1,11 @@
 ﻿using ListProductForm.Entities;
+using ListProductForm.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ namespace ListProductForm.CategoryForm
 {
     public partial class CategoryAddForm : Form
     {
+        private readonly EFContext _context;
         public string NameCategory
         {
             get
@@ -31,11 +34,13 @@ namespace ListProductForm.CategoryForm
         public CategoryAddForm()
         {
             InitializeComponent();
+            _context = new EFContext();
         }
 
         // додаємо категорію в Категорії
         private void btInsert_Click(object sender, EventArgs e)
         {
+            /*
             Category category = new Category();
             category.Name = txtCategory.Text;
             try
@@ -52,6 +57,27 @@ namespace ListProductForm.CategoryForm
             catch (Exception ex)
             {
                 MessageBox.Show($"Помилка запису категорії\n\t{ex.Message}", ex.Message);
+            }
+            */
+
+            //CategoryAddForm dlg = new CategoryAddForm();
+           // if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                var imageClientPath = txtPath.Text;
+                string path = @"Images\Category\";
+                var imageName = Guid.NewGuid().ToString() + ".jpg";
+                using (Bitmap bitmap = new Bitmap(imageClientPath))
+                {
+                    var smallImage = ImageWorker.CreateImage(bitmap, 64, 64);
+                    smallImage.Save(path + imageName, ImageFormat.Jpeg);
+                }
+                Category category = new Category
+                {
+                    Name = txtCategory.Text,
+                    Image = imageName
+                };
+                _context.Categories.Add(category);
+                _context.SaveChanges();
             }
 
         }
